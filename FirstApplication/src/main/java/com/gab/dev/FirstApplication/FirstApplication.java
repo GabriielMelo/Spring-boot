@@ -13,8 +13,10 @@ public class FirstApplication {
 		SpringApplication.run(FirstApplication.class, args);
 	}
 
+	// Instanciando automaticamente da classe AppConfiguration
 	private AppConfiguration appConfiguration;
 
+	// metodo construtor para instanciação
 	public FirstApplication(AppConfiguration appConfiguration){
 	this.appConfiguration = appConfiguration;
 
@@ -25,7 +27,7 @@ public class FirstApplication {
 
         return "Hello World Spring-boot!";
     }
-
+	// Chamando metodo da classe AppConfiguration na rota /Configuration
 	@GetMapping("/Configuracao")
 		public String config(){
 			return appConfiguration.getMessage();
